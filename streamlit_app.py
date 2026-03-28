@@ -114,4 +114,6 @@ if page == pages[2] :
 
     import joblib
     joblib.dump(clf, "model")
-    loaded_model = pickle.load(open("model", 'rb'))
+    import pickle
+    pickle.dump(clf, open("model", 'wb'))
+    joblib.load("model")
