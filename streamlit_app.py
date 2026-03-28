@@ -117,3 +117,8 @@ if page == pages[2] :
     import pickle
     pickle.dump(clf, open("model", 'wb'))
     joblib.load("model")
+    
+    joblib.dump(clf, "model.joblib")
+    # Plus tard...
+    loaded_model = joblib.load("model.joblib")
+    st.write(loaded_model.score(X_test, y_test))
